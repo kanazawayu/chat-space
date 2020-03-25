@@ -1,0 +1,25 @@
+.side-bar
+  .side-bar__user-name
+    .top-items
+      %p.top-items__name
+        高橋
+      %ul.top-items__menu
+        %li.top-items__menu__new-group
+          = link_to "#" do
+            = icon('far', 'edit')
+        %li.top-items__menu__edit-user
+          = link_to "#" do
+            = icon('fa', 'cog')
+  .side-bar__group-list
+    .side-bar__group-list__box
+      = link_to "#", class: "group" do
+        %P.side-bar__group-list__box__name
+          test
+        %p.side-bar__group-list__box__message
+          まだメッセージがありません
+    .side-bar__group-list__box
+      = link_to "#", class: "group" do
+        %P.side-bar__group-list__box__name
+          test
+        %p.side-bar__group-list__box__message
+          まだメッセージがありません
