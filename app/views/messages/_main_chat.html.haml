@@ -1,0 +1,34 @@
+.chat-main
+  .chat-main__group-info
+    .chat-main__group-info__left
+      .chat-main__group-info__left__name
+        testgroup
+      .chat-main__group-info__left__group
+        Member : test
+    = link_to "#", class: "chat-main__group-info__btn" do
+      Edit
+  .chat-main__message-list
+    .chat-main__message-list__box
+      .chat-main__message-list__box__up
+        %p.chat-main__message-list__box__up__name
+          カラカラ
+        %p.chat-main__message-list__box__up__time
+          2020/03/25(Wed) 10:55:40
+      %p.chat-main__message-list__box__text
+        XZXZX
+    .chat-main__message-list__box
+      .chat-main__message-list__box__up
+        %p.chat-main__message-list__box__up__name
+          カラカラ
+        %p.chat-main__message-list__box__up__time
+          2020/03/25(Wed) 10:55:40
+      %p.chat-main__message-list__box__text
+        ccsc
+  .chat-main__message-form
+    %form.new_message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn", value: "Send"}
