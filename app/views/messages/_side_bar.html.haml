@@ -2,14 +2,14 @@
   .side-bar__user-name
     .top-items
       %p.top-items__name
-        高橋
+        = current_user.name
       %ul.top-items__menu
         %li.top-items__menu__new-group
           = link_to "#" do
             = icon('far', 'edit')
         %li.top-items__menu__edit-user
-          = link_to "#" do
-            = icon('fa', 'cog')
+          = link_to edit_user_path(current_user) do
+            = icon('fa', 'cog', class: 'icon')
   .side-bar__group-list
     .side-bar__group-list__box
       = link_to "#", class: "group" do
