@@ -1,5 +1,7 @@
 $(function(){
 
+  var message_list = $('.chat-main__message-list')
+
   function buildHTML(message) {
     if (message.content && message.image) {
       var html = `<div class="chat-main__message-list__box" data-message-id=${message.id}>
@@ -66,8 +68,8 @@ $(function(){
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
         });
-        $('.chat-main__message-list').append(insertHTML);
-        $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
+        message_list.append(insertHTML);
+        message_list.animate({ scrollTop: message_list[0].scrollHeight});
       }
     })
     .fail(function() {
@@ -89,8 +91,8 @@ $(function(){
       })
       .done(function(data) {
         var html = buildHTML(data);
-        $('.chat-main__message-list').append(html);
-        $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
+        message_list.append(html);
+        message_list.animate({ scrollTop: message_list[0].scrollHeight});
         $('form')[0].reset();
         $(".form__submit").prop('disabled', false);
       })
